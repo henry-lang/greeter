@@ -1,0 +1,13 @@
+[package]
+name = "greeter"
+version = "0.1.0"
+edition = "2021"
+
+license = "MIT"
+description = "A simple greeter for your terminal that can give you useful info before you embark on a programming journey"
+homepage = "https://github.com/henry-lang/greeter"
+documentation = "N/A"
+repository = "https://github.com/henry-lang/greeter"
+readme = "README.md"
+
+[dependencies]
