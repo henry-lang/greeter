@@ -1,11 +1,14 @@
+mod time;
 mod weather;
 
 use serde::Deserialize;
 
-use weather::WeatherSearch;
+use time::TimeConfig;
+use weather::WeatherConfig;
 
-#[derive(Deserialize)]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all(deserialize = "snake_case"))]
 pub enum Widget {
-    Time { format: String },
-    Weather(WeatherSearch),
+    Time(TimeConfig),
+    Weather(WeatherConfig),
 }

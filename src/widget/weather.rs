@@ -1,8 +1,17 @@
 use serde::Deserialize;
 
-#[derive(Deserialize)]
-pub enum WeatherSearch {
-    ByName(String),
+#[derive(Debug, Deserialize)]
+#[serde(untagged, rename_all(deserialize = "snake_case"))]
+pub enum Search {
+    ByCity { city: String },
     ByCoordinates { lat: f64, long: f64 },
-    ByZip,
+    ByZip { zip: String },
+}
+
+#[derive(Debug, Deserialize)]
+pub struct WeatherConfig {
+    api_key: String,
+
+    #[serde(flatten)]
+    search: Search,
 }

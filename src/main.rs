@@ -9,11 +9,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = Config::load(
         [
             home::home_dir().expect("home directory"),
-            ".greeter.toml".into(),
+            ".greeter.json".into(),
         ]
         .iter()
         .collect::<PathBuf>(),
     );
+
+    if config.debug {
+        dbg!(config);
+    }
 
     println!(
         "{}",
