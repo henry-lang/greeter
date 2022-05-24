@@ -6,8 +6,10 @@ use crate::widget::Widget;
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
-    pub debug: bool,
     pub name: Option<String>,
+
+    #[serde(default)]
+    pub debug: bool,
 
     #[serde(default)]
     pub widgets: Vec<Widget>,
