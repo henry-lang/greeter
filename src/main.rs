@@ -16,20 +16,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
 
     if config.debug {
-        dbg!(config);
+        dbg!(&config);
     }
 
-    println!(
-        "{}",
-        match username::get_user_name() {
-            Ok(name) => {
-                format!("Greetings, {}!", name)
-            }
-            _ => {
-                "Greetings!".into()
-            }
-        }
-    );
+    for widget in config.widgets {}
 
     Ok(())
 }
