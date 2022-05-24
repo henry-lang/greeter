@@ -19,7 +19,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         dbg!(&config);
     }
 
-    for widget in config.widgets {}
+    for widget in config.widgets {
+        widget.display();
+    }
 
     Ok(())
 }

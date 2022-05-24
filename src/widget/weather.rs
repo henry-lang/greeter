@@ -15,3 +15,5 @@ pub struct WeatherConfig {
     #[serde(flatten)]
     search: Search,
 }
+
+pub fn display_weather_widget(config: &WeatherConfig) {}
