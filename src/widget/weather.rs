@@ -34,7 +34,9 @@ impl WeatherConfig {
     }
 }
 
+#[derive(Debug, Deserialize)]
 pub struct WeatherData {
+    #[serde()]
     temp: f64,
 }
 
@@ -53,4 +55,5 @@ pub fn display_weather_widget(config: &WeatherConfig) {
             config.api_key
         )),
     };
+    println!("{:?}", data.unwrap().json::<WeatherData>().unwrap())
 }
